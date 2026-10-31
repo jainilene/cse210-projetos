@@ -16,25 +16,41 @@ class Program
         Console.Write("Informe a nota: ");
         string notaDesc = Console.ReadLine();
         float notaNumerica = float.Parse(notaDesc);
+        int minimoAprovacao = 70;
+        string letraNota;
         if (notaNumerica >= 90)
         {
-            Console.WriteLine($"Sua nota corresponde a: A");
+            letraNota = "A";
         }
         else if (notaNumerica >= 80)
         {
-            Console.WriteLine($"Sua nota corresponde a: B");
+            letraNota = "B";
         }
-        else if(notaNumerica > 70)
+        else if (notaNumerica > 70)
         {
-            Console.WriteLine($"Sua nota corresponde a: C");
+            letraNota = "C";
         }
-        else if(notaNumerica > 60)
+        else if (notaNumerica > 60)
         {
-            Console.WriteLine($"Sua nota corresponde a: D");
+            letraNota = "D";
         }
-        else 
+        else
         {
-            Console.WriteLine($"Sua nota corresponde a: F");
+            letraNota = "F";
+        }
+
+        if (letraNota != null)
+        {
+            Console.WriteLine($"Sua nota conceitual foi: {letraNota}");
+        }
+
+        if (notaNumerica >= minimoAprovacao)
+        {
+            Console.WriteLine("Parabéns, Você foi aprovado no curso!");
+        }
+        else
+        {
+            Console.WriteLine("Incentivamos a realizar o curso novamente, você está cada vez mais perto!");
         }
 
 
