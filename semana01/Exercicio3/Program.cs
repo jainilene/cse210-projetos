@@ -4,9 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Qual é o seu número mágico? ");
-        string numeroDesc = Console.ReadLine();
-        int numero = int.Parse(numeroDesc);
+        // Console.Write("Qual é o seu número mágico? ");
+        // string numeroDesc = Console.ReadLine();
+        // int numero = int.Parse(numeroDesc);
+
+        Random geradorNum = new Random();
+        int numero = geradorNum.Next(1, 100);
+        Console.WriteLine("Foi gerado um número aleatório entre 1 e 100. Você é capaz de adivinhar?");
+
         bool repetir = true;
         while (repetir)
         {
