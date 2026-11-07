@@ -10,7 +10,7 @@ public class Diario
     List<Registro> _registrosNaoSalvos = new List<Registro>();
     GeradorDePerguntas _gerador = new GeradorDePerguntas();
 
-    public void EscreverRegistro()
+    public void EscreverNoDiario()
     {
         string perguntaUsuario = _gerador.GerarPergunta();
         Console.Write(perguntaUsuario);

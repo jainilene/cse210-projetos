@@ -25,7 +25,7 @@ class Program
 
             if (opcao == Escrever)
             {
-                diario.EscreverRegistro();
+                diario.EscreverNoDiario();
             }
             else if (opcao == Exibir)
             {
