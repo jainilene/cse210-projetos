@@ -12,15 +12,21 @@ public class Diario
 
     public void EscreverRegistro()
     {
-        string pergunta = _gerador.GerarPergunta();
-        Console.Write(pergunta);
-        string resposta = Console.ReadLine();
+        string perguntaUsuario = _gerador.GerarPergunta();
+        Console.Write(perguntaUsuario);
+        string respostaUsuario = Console.ReadLine();
+        Registro registroUsuario = CriarRegistro(perguntaUsuario, respostaUsuario);
+        _registrosNaoSalvos.Add(registroUsuario);
+    }
+
+    public Registro CriarRegistro(string pergunta, string resposta)
+    {
         Registro r = new Registro();
         DateTime horaAtual = DateTime.Now;
         r._data = horaAtual.ToShortDateString();
         r._pergunta = pergunta;
         r._resposta = resposta;
-        _registrosNaoSalvos.Add(r);
+        return r;
     }
 
     public void ExibirDiario()
