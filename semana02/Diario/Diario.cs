@@ -1,5 +1,9 @@
 using System.IO;
-
+/*
+    Requisitos complementares: Fiz alteração para que ao carregar o arquivo não substitua todos os registros.
+    Os registros salvos em arquivos e registros novos (não salvos ainda) são tratados separadamente.
+    Dessa forma se o usuário inserir dados e, antes de salvar, ele carregar o arquivo, os registros não serão perdidos, e poderão ser salvos ainda.
+*/
 public class Diario
 {
     List<Registro> _registrosCarregadosArquivo = new List<Registro>();
@@ -62,5 +66,6 @@ public class Diario
         _registrosNaoSalvos = new List<Registro>();
 
     }
+
 
 }
