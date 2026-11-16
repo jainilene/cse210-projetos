@@ -25,7 +25,8 @@ public class Escritura
 
     public string ObterTexto()
     {
-        string texto = "";
+        string texto = _referencia.ObterTexto();
+        texto = texto + " ";
         foreach (Palavra palavra in _palavras)
         {
             if (palavra.EstaOculta())
