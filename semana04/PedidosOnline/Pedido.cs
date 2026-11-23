@@ -5,8 +5,18 @@ public class Pedido
 
     public double CalcularCustoTotal()
     {
-        double valorTotal = 0;
+        double custoEnvio = 5; //Se mora nos EUA
+        if (!_cliente.VerificaSeMoraEUA()) 
+        {
+            custoEnvio = 35; //Se não mora nos EUA
+        }
+        double custoProdutos = 0;
+        foreach(Produto prod in _produtos)
+        {
+            custoProdutos = custoProdutos + prod.CalcularCustoProduto();
+        }
 
+        double valorTotal = custoEnvio + custoProdutos;
         return valorTotal;
     }
 
