@@ -5,6 +5,14 @@ public class Endereco
     private string _estado;
     private string _pais;
 
+    public Endereco(string rua, string cidade, string estado, string pais)
+    {
+        _rua = rua;
+        _cidade = cidade;
+        _estado = estado;
+        _pais = pais;
+    }
+
     public bool VerificaPaisEUA()
     {
         if (_pais == "EUA")

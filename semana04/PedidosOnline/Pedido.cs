@@ -3,6 +3,12 @@ public class Pedido
     private List<Produto> _produtos = new List<Produto>();
     private Cliente _cliente;
 
+    public Pedido(Cliente cliente, List<Produto> produtos)
+    {
+        _cliente = cliente;
+        _produtos = produtos;
+    }
+
     public double CalcularCustoTotal()
     {
         double custoEnvio = 5; //Se mora nos EUA
@@ -22,15 +28,22 @@ public class Pedido
 
     public string GerarEtiquetaEmbalagem()
     {
-        string etiquetaEmbalagem = "";
-
+        string etiquetaEmbalagem = ""; //listar nome e a identificação de cada produto
+        etiquetaEmbalagem = etiquetaEmbalagem + "Cliente: " + _cliente.GetNomeCliente() + "\n";
+        foreach(Produto prod in _produtos)
+        {
+            etiquetaEmbalagem = etiquetaEmbalagem + prod.GetProduto();
+        }
         return etiquetaEmbalagem;
     }
 
     public string GerarEtiquetaEnvio()
     {
-        string etiquetaEnvio = "";
+        return _cliente.GetNomeEnderecoCliente();
+    }
 
-        return etiquetaEnvio;
+    public void AdicionarProduto(Produto p)
+    {
+        _produtos.Add(p);
     }
 }
